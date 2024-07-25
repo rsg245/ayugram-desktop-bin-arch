@@ -1,30 +1,27 @@
-# Maintainer: westpain <homicide@disroot.org>
-# Co-maintainer: DiamivaeBro <assassinssamsa@gmail.com>
+# Maintainer: TheAirBlow <theairblow@gmail.com>
 # PKGBUILD version: v2.0
 pkgname=ayugram-desktop-bin
-pkgver=4.11.1
-pkgrel=3
-pkgdesc="Unofficial desktop version of Telegram messaging app with ToS breaking features in mind - Static binaries"
+pkgver=5.2.2
+pkgrel=1
+pkgdesc="Desktop Telegram client with good customization and Ghost mode built by Andontie AUR"
 arch=(x86_64)
 url="https://github.com/AyuGram/AyuGramDesktop"
 license=(GPL3)
-depends=('desktop-file-utils' 'glib2' 'ffmpeg' 'sqlite' 'qt6-imageformats' 'qt6-svg' 'qt6-wayland' 'protobuf' 'rnnoise' 'openssl' 'hicolor-icon-theme' 'libdbus' 'libx11' 'libglvnd' 'fontconfig')
+depends=('hunspell' 'ffmpeg' 'hicolor-icon-theme' 'lz4' 'minizip' 'openal' 'qt6-imageformats' 'qt6-svg' 'qt6-wayland' 'xxhash' 'rnnoise' 'pipewire' 'libxtst' 'libxrandr' 'libxcomposite' 'libxdamage' 'abseil-cpp' 'libdispatch' 'openssl' 'protobuf' 'glib2' 'libsigc++-3.0' 'kcoreaddons')
 makedepends=('chrpath')
-optdepends=('webkit2gtk: embedded browser features'
-	    'xdg-desktop-portal: desktop integration')
+optdepends=('webkit2gtk: embedded browser features' 'xdg-desktop-portal: desktop integration')
 provides=('ayugram-desktop')
 conflicts=('ayugram-desktop')
 
 # Archive source
 source=(
-  https://git.killarious.org/ayugram-releases/archlinux-bin/raw/tag/${pkgver}/archlinux_ayugram_v${pkgver}.tar.gz
+  https://aur.andontie.net/x86_64/ayugram-desktop-${pkgver}-1-x86_64.pkg.tar.zst
 )
 
 # Checksums
-sha256sums=('5a79b7ac4c8f94e777556683b2d5040310e9e49280915662f2666c9dd7e0e012')
+sha256sums=('d98fd111f228b630ea764716deb567341a2017c99f60eca46fe3fe7e29599f51')
 
 package() {
-
 	cd "$srcdir/"
 
 	# Creating needed directories
@@ -44,13 +41,13 @@ package() {
 
 	# Desktop launcher
 	install -Dm644 "$srcdir/usr/share/icons/hicolor/256x256/apps/ayugram.png" "$pkgdir/usr/share/pixmaps/ayugram.png"
-	install -Dm644 "$srcdir/usr/share/applications/ayugram.desktop.desktop" "$pkgdir/usr/share/applications/ayugram.desktop.desktop"
+	install -Dm644 "$srcdir/usr/share/applications/com.ayugram.desktop.desktop" "$pkgdir/usr/share/applications/com.ayugram.desktop.desktop"
 
 	# DBus service
-	install -Dm644 "$srcdir/usr/share/dbus-1/services/ayugram.desktop.service" "$pkgdir/usr/share/dbus-1/services/ayugram.desktop.service"
+	install -Dm644 "$srcdir/usr/share/dbus-1/services/com.ayugram.desktop.service" "$pkgdir/usr/share/dbus-1/services/com.ayugram.desktop.service"
 
 	# Metainfo
-	install -Dm644 "$srcdir/usr/share/metainfo/ayugram.desktop.metainfo.xml" "$pkgdir/usr/share/metainfo/ayugram.desktop.metainfo.xml"
+	install -Dm644 "$srcdir/usr/share/metainfo/com.ayugram.desktop.metainfo.xml" "$pkgdir/usr/share/metainfo/com.ayugram.desktop.metainfo.xml"
 
 	# Icons
 	local icon_size icon_dir
