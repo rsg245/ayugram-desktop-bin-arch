@@ -1,7 +1,7 @@
 # Maintainer: TheAirBlow <theairblow@gmail.com>
 # PKGBUILD version: v2.0
 pkgname=ayugram-desktop-bin
-pkgver=5.2.2
+pkgver=5.3.2
 pkgrel=1
 pkgdesc="Desktop Telegram client with good customization and Ghost mode built by Andontie AUR"
 arch=(x86_64)
@@ -15,7 +15,7 @@ conflicts=('ayugram-desktop')
 
 # Archive source
 source=(
-  https://aur.andontie.net/x86_64/ayugram-desktop-${pkgver}-1-x86_64.pkg.tar.zst
+  https://aur.andontie.net/x86_64/ayugram-desktop-${pkgver}-${pkgrel}-x86_64.pkg.tar.zst
 )
 
 # Checksums
