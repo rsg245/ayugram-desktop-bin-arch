@@ -1,13 +1,13 @@
 # Maintainer: TheAirBlow <theairblow@gmail.com>
 # PKGBUILD version: v2.0
 pkgname=ayugram-desktop-bin
-pkgver=5.3.2
+pkgver=5.4.1
 pkgrel=1
 pkgdesc="Desktop Telegram client with good customization and Ghost mode built by Andontie AUR"
 arch=(x86_64)
 url="https://github.com/AyuGram/AyuGramDesktop"
 license=(GPL3)
-depends=('hunspell' 'ffmpeg' 'hicolor-icon-theme' 'lz4' 'minizip' 'openal' 'qt6-imageformats' 'qt6-svg' 'qt6-wayland' 'xxhash' 'rnnoise' 'pipewire' 'libxtst' 'libxrandr' 'libxcomposite' 'libxdamage' 'abseil-cpp' 'libdispatch' 'openssl' 'protobuf' 'glib2' 'libsigc++-3.0' 'kcoreaddons')
+depends=('hunspell' 'ffmpeg' 'hicolor-icon-theme' 'lz4' 'minizip' 'openal' 'qt6-imageformats' 'qt6-svg' 'qt6-wayland' 'xxhash' 'rnnoise' 'pipewire' 'libxtst' 'libxrandr' 'libxcomposite' 'libxdamage' 'abseil-cpp' 'libdispatch' 'openssl' 'protobuf' 'glib2' 'libsigc++-3.0' 'kcoreaddons' 'ada' 'openh264')
 makedepends=('chrpath')
 optdepends=('webkit2gtk: embedded browser features' 'xdg-desktop-portal: desktop integration')
 provides=('ayugram-desktop')
@@ -19,7 +19,7 @@ source=(
 )
 
 # Checksums
-sha256sums=('a5a8785b47b543edb674109e743907ffaa1295620bd8527ad3b7bf14652be621')
+sha256sums=('d8b484d364d5c636739e6836efaf371383cbb558b46b8ef51688b22621c73b79')
 
 package() {
 	cd "$srcdir/"
