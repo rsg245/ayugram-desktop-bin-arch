@@ -36,6 +36,6 @@ pkgbase = ayugram-desktop-bin
 	provides = ayugram-desktop
 	conflicts = ayugram-desktop
 	source = https://aur.andontie.net/x86_64/ayugram-desktop-5.4.1-2-x86_64.pkg.tar.zst
-	sha256sums = d8b484d364d5c636739e6836efaf371383cbb558b46b8ef51688b22621c73b79
+	sha256sums = 394ce4fff71eb2c1a0a6b1cb35e310ce1d4e241eb93fbe1fd2d130f8827dee11
 
 pkgname = ayugram-desktop-bin
