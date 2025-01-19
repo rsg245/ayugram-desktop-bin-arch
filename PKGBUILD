@@ -2,7 +2,7 @@
 # PKGBUILD version: v2.0
 pkgname=ayugram-desktop-bin
 pkgver=5.8.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Desktop Telegram client with good customization and Ghost mode built by Andontie AUR"
 arch=(x86_64)
 url="https://github.com/AyuGram/AyuGramDesktop"
@@ -19,7 +19,7 @@ source=(
 )
 
 # Checksums
-sha256sums=('c25b964b2c81d5af637f6f3c5fc23cc60a9216f9e92170d69d0bf71a081bafa0')
+sha256sums=('e474b11c17b8165777b80ae5b4a660882c5b4bada97dd5dfbde8f5b33f91e55b')
 
 package() {
 	cd "$srcdir/"
