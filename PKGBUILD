@@ -13,9 +13,11 @@ optdepends=('webkit2gtk: embedded browser features' 'xdg-desktop-portal: desktop
 provides=('ayugram-desktop')
 conflicts=('ayugram-desktop')
 
+pkgrel_upstream=1
+
 # Archive source
 source=(
-  https://aur.andontie.net/x86_64/ayugram-desktop-${pkgver}-${pkgrel}-x86_64.pkg.tar.zst
+  https://aur.andontie.net/x86_64/ayugram-desktop-${pkgver}-${pkgrel_upstream}-x86_64.pkg.tar.zst
 )
 
 # Checksums
