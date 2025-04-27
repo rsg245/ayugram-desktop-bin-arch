@@ -1,5 +1,6 @@
 # Maintainer: RedLim <yt.redlim@gmail.com>
-# PKGBUILD version: v2.0
+# Maintainer: RSG245 <rsg245@ya.ru>
+# PKGBUILD version: v2.1
 pkgname=ayugram-desktop-bin
 pkgver=5.12.3
 pkgrel=6
@@ -21,7 +22,7 @@ source=(
 )
 
 # Checksums
-sha256sums=('e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855')
+sha256sums=('6a91ce83397581094592cad26b73af8177da83fb671dced3c7d0f2813fbeff6b')
 
 package() {
 	cd "$srcdir/"
