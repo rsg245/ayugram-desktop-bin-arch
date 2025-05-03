@@ -20,7 +20,7 @@ pkgrel_upstream=7
 # Archive source
 source=(
   #https://aur.andontie.net/x86_64/ayugram-desktop-${pkgver}-${pkgrel_upstream}-x86_64.pkg.tar.zst
-  ayugram-desktop-${pkgver}-${pkgrel_upstream}-x86_64.pkg.tar.zst
+  https://github.com/rsg245/ayugram-desktop-bin-arch/releases/download/${pkgver}-${pkgrel_upstream}/ayugram-desktop-${pkgver}-${pkgrel_upstream}-x86_64.pkg.tar.zst  
 )
 
 # Checksums
