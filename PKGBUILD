@@ -45,7 +45,7 @@ package() {
 	chrpath --delete "$pkgdir/usr/bin/ayugram-desktop"
 
 	# Desktop launcher
-	install -Dm644 "$srcdir/usr/share/icons/hicolor/256x256/apps/ayugram.png" "$pkgdir/usr/share/pixmaps/ayugram.png"
+	install -Dm644 "$srcdir/usr/share/icons/hicolor/256x256/apps/com.ayugram.desktop.png" "$pkgdir/usr/share/pixmaps/ayugram.png"
 	install -Dm644 "$srcdir/usr/share/applications/com.ayugram.desktop.desktop" "$pkgdir/usr/share/applications/com.ayugram.desktop.desktop"
 
 	# DBus service
