@@ -24,7 +24,7 @@ source=(
 )
 
 # Checksums
-sha256sums=('4b2df7cd012ec3ff65480d69dc7dac827854774e252acc97b1a862c02046dfcf')
+sha256sums=('05df6fc7a82af3442d1b819ebe84bae0b19a991cc4d02b723cb9f3f9af0389cc')
 
 package() {
 	cd "$srcdir/"
