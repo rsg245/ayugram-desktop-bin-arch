@@ -1,10 +1,10 @@
 # Maintainer: RSG245 <rsg245@yandex.com>
-# PKGBUILD version: v0.9
+# PKGBUILD version: v0.9.1
 # PKGBUILD source: https://github.com/rsg245/ayugram-desktop-bin-arch
 # PKGBUILD source: https://gitlab.archlinux.org/rsg245/ayugram-desktop-bin
 pkgname=ayugram-desktop-bin
 pkgver=5.14.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Desktop Telegram client with good customization and Ghost mode built by RSG245"
 arch=(x86_64)
 url="https://github.com/AyuGram/AyuGramDesktop"
@@ -15,7 +15,7 @@ optdepends=('webkit2gtk: embedded browser features' 'xdg-desktop-portal: desktop
 provides=('ayugram-desktop')
 conflicts=('ayugram-desktop')
 
-pkgrel_upstream=1
+pkgrel_upstream=2
 
 # Archive source
 source=(
@@ -24,7 +24,7 @@ source=(
 )
 
 # Checksums
-sha256sums=('4b2df7cd012ec3ff65480d69dc7dac827854774e252acc97b1a862c02046dfcf')
+sha256sums=('05df6fc7a82af3442d1b819ebe84bae0b19a991cc4d02b723cb9f3f9af0389cc')
 
 package() {
 	cd "$srcdir/"
@@ -45,7 +45,7 @@ package() {
 	chrpath --delete "$pkgdir/usr/bin/ayugram-desktop"
 
 	# Desktop launcher
-	install -Dm644 "$srcdir/usr/share/icons/hicolor/256x256/apps/com.ayugram.desktop.png" "$pkgdir/usr/share/pixmaps/ayugram.png"
+	install -Dm644 "$srcdir/usr/share/icons/hicolor/256x256/apps/ayugram.png" "$pkgdir/usr/share/pixmaps/ayugram.png"
 	install -Dm644 "$srcdir/usr/share/applications/com.ayugram.desktop.desktop" "$pkgdir/usr/share/applications/com.ayugram.desktop.desktop"
 
 	# DBus service
@@ -59,6 +59,6 @@ package() {
 	for icon_size in 16 32 48 64 128 256 512; do
 		icon_dir="$pkgdir/usr/share/icons/hicolor/${icon_size}x${icon_size}/apps"
 		install -d "$icon_dir"
-		install -m644 "$srcdir/usr/share/icons/hicolor/${icon_size}x${icon_size}/apps/com.ayugram.desktop.png" "$icon_dir/com.ayugram.desktop.png"
+		install -m644 "$srcdir/usr/share/icons/hicolor/${icon_size}x${icon_size}/apps/ayugram.png" "$icon_dir/ayugram.png"
 	done
 }
