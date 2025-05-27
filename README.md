@@ -1,1 +1,1 @@
-# AyugramDesktop Arch bin pkg
+# Ayugram Desktop for Arch Linux
