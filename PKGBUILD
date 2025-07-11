@@ -38,7 +38,7 @@ package() {
 	install -dm755 "$pkgdir/usr/share/metainfo"
 
 	# Application executable
-	install -Dm755 "$srcdir/usr/bin/ayugram-desktop" "$pkgdir/usr/bin/ayugram-desktop"
+	install -Dm755 "$srcdir/usr/bin/AyuGram" "$pkgdir/usr/bin/ayugram-desktop"
 
 	# Remove RPATH informations
 	chrpath --delete "$pkgdir/usr/bin/ayugram-desktop"
