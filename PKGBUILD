@@ -38,10 +38,10 @@ package() {
 	install -dm755 "$pkgdir/usr/share/metainfo"
 
 	# Application executable
-	install -Dm755 "$srcdir/usr/bin/AyuGram" "$pkgdir/usr/bin/ayugram-desktop"
+	install -Dm755 "$srcdir/usr/bin/AyuGram" "$pkgdir/usr/bin/AyuGram"
 
 	# Remove RPATH informations
-	chrpath --delete "$pkgdir/usr/bin/ayugram-desktop"
+	chrpath --delete "$pkgdir/usr/bin/AyuGram"
 
 	# Desktop launcher
 	install -Dm644 "$srcdir/usr/share/icons/hicolor/256x256/apps/com.ayugram.desktop.png" "$pkgdir/usr/share/pixmaps/ayugram.png"
