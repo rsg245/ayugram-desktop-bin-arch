@@ -6,3 +6,17 @@
 ```
 yay -S ayugram-desktop-bin
 ```
+
+## Manual install (Installing without AUR)
+
+```
+git clone https://github.com/rsg245/ayugram-desktop-bin-arch.git
+```
+
+```
+cd ayugram-desktop-bin-arch 
+```
+
+```
+makepkg -si
+```
