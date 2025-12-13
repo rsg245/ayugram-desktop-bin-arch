@@ -25,3 +25,4 @@ makepkg -si
 
 - [Arch Linux GitLab](https://gitlab.archlinux.org/rsg245/ayugram-desktop-bin)
 - [Codeberg](https://codeberg.org/rsg245/ayugram-desktop-bin-arch)
+- [GitHub](https://github.com/rsg245/ayugram-desktop-bin-arch)
