@@ -20,3 +20,8 @@ cd ayugram-desktop-bin-arch
 ```
 makepkg -si
 ```
+
+## Active Mirrors
+
+- [Arch Linux GitLab](https://gitlab.archlinux.org/rsg245/ayugram-desktop-bin)
+- [Codeberg](https://codeberg.org/rsg245/ayugram-desktop-bin-arch)
