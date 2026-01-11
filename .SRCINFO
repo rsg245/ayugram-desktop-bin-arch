@@ -1,6 +1,6 @@
 pkgbase = ayugram-desktop-bin
 	pkgdesc = Desktop Telegram client with good customization and Ghost mode
-	pkgver = 6.2.4
+	pkgver = 6.3.10
 	pkgrel = 2
 	url = https://github.com/AyuGram/AyuGramDesktop
 	arch = x86_64
@@ -38,7 +38,7 @@ pkgbase = ayugram-desktop-bin
 	optdepends = xdg-desktop-portal: desktop integration
 	provides = ayugram-desktop
 	conflicts = ayugram-desktop
-	source = https://github.com/rsg245/ayugram-desktop-bin-arch/releases/download/6.2.4-2/ayugram-desktop-6.2.4-2-x86_64.pkg.tar.zst
-	sha256sums = 94e659a90f8f79fe572b0adb6110fbf941fafbf5fafbb9f1dc4e2366b18524d7
+	source = https://github.com/rsg245/ayugram-desktop-bin-arch/releases/download/6.3.10-2/ayugram-desktop-6.3.10-2-x86_64.pkg.tar.zst
+	sha256sums = fd0a79661c3244b71507633ec31dc88e77f97617afc5edf7fdd718c67e363a5b
 
 pkgname = ayugram-desktop-bin
