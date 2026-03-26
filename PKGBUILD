@@ -3,7 +3,7 @@
 # PKGBUILD source: https://gitlab.archlinux.org/rsg245/ayugram-desktop-bin
 pkgname=ayugram-desktop-bin
 pkgver=6.3.10
-pkgrel=2
+pkgrel=3
 pkgdesc="Desktop Telegram client with good customization and Ghost mode"
 arch=(x86_64)
 url="https://github.com/AyuGram/AyuGramDesktop"
@@ -14,7 +14,7 @@ optdepends=('webkit2gtk: embedded browser features' 'xdg-desktop-portal: desktop
 provides=('ayugram-desktop')
 conflicts=('ayugram-desktop')
 
-pkgrel_upstream=2
+pkgrel_upstream=3
 
 # Archive source
 source=(
@@ -27,7 +27,7 @@ source=(
 )
 
 # Checksums
-sha256sums=('fd0a79661c3244b71507633ec31dc88e77f97617afc5edf7fdd718c67e363a5b')
+sha256sums=('e41fc13a1368aefd1c38837946bfdc64873c1afee5b838218b4ceeee616725c7')
 
 package() {
 	cd "$srcdir/"
