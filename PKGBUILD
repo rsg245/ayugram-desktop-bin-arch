@@ -1,67 +1,72 @@
 # Maintainer: Maxim Balashov <me@rsg.su>
-# PKGBUILD source: https://github.com/rsg245/ayugram-desktop-bin-arch
+# Co-Maintainer: Mehrab Mahmud Udoy <contact@rimehrab.is-a.dev>
 
 pkgname=ayugram-desktop-bin
-pkgver=6.3.10
-pkgrel=5
+pkgver=6.7.8
+pkgrel=3
 pkgdesc="Desktop Telegram client with good customization and Ghost mode"
 arch=(x86_64)
 url="https://github.com/AyuGram/AyuGramDesktop"
-license=(GPL3)
-depends=('hunspell' 'ffmpeg' 'hicolor-icon-theme' 'lz4' 'minizip' 'openal' 'qt6-imageformats' 'qt6-svg' 'qt6-wayland' 'xxhash' 'rnnoise' 'pipewire' 'libxtst' 'libxrandr' 'libxcomposite' 'libxdamage' 'abseil-cpp' 'libdispatch' 'openssl' 'protobuf' 'glib2' 'libsigc++-3.0' 'kcoreaddons' 'ada' 'openh264' 'jemalloc' 'libavif' 'libheif')
-makedepends=('chrpath')
-optdepends=('webkit2gtk: embedded browser features' 'xdg-desktop-portal: desktop integration')
+license=('GPL-3.0-or-later')
+depends=(
+    'abseil-cpp' 'ada' 'ffmpeg' 'glib2' 'glibc' 'hicolor-icon-theme'
+    'hunspell' 'kcoreaddons' 'libavif' 'libdispatch' 'libgcc' 'libheif'
+    'libjpeg-turbo' 'libjxl' 'libstdc++' 'libvpx' 'libx11' 'libxcb'
+    'libxcomposite' 'libxdamage' 'libxext' 'libxfixes' 'libxkbcommon'
+    'libxrandr' 'libxtst' 'lz4' 'minizip' 'openal' 'openh264' 'openssl'
+    'opus' 'libpipewire' 'protobuf' 'qt6-base' 'qt6-declarative'
+    'qt6-svg' 'qt6-wayland' 'rnnoise'
+    'xcb-util-keysyms' 'xxhash' 'zlib'
+)
+optdepends=(
+    'geoclue: geoinformation support'
+    'geocode-glib-2: geocoding support'
+    'webkit2gtk-4.1: embedded browser features provided by webkit2gtk-4.1'
+    'webkitgtk-6.0: embedded browser features provided by webkitgtk-6.0 (Wayland only)'
+    'xdg-desktop-portal: desktop integration'
+)
 provides=('ayugram-desktop')
 conflicts=('ayugram-desktop')
+options=('!debug')
 
-pkgrel_upstream=5
-
-# Archive source
-source=(
-  # Community mirror
-  #https://aur.andontie.net/x86_64/ayugram-desktop-${pkgver}-${pkgrel_upstream}-x86_64.pkg.tar.zst 
-  # My Github
-  https://github.com/rsg245/ayugram-desktop-bin-arch/releases/download/${pkgver}-${pkgrel_upstream}/ayugram-desktop-${pkgver}-${pkgrel_upstream}-x86_64.pkg.tar.zst  
-  # ayugram-desktop pkg author
-  #https://download.opensuse.org/repositories/home:/ZhangHua/Arch/x86_64/ayugram-desktop-${pkgver}-${pkgrel_upstream}-x86_64.pkg.tar.zst
-)
-
-# Checksums
-sha256sums=('90ba69ded966f8b8e7a59521393b05a547147e9300d8ac2a9d9bfeed50574e13')
+source=("https://cdn77.cachyos.org/repo/${CARCH}/cachyos/ayugram-desktop-${pkgver}-${pkgrel}-${CARCH}.pkg.tar.zst")
+sha256sums=('db82beb261d22d99ae20b67e7715178ef65c3c876c8f8e55ad74f7d217deb8f5')
 
 package() {
-	cd "$srcdir/"
+    # Binary
+    install -Dm755 "$srcdir/usr/bin/AyuGram" "$pkgdir/usr/bin/AyuGram"
 
-	# Creating needed directories
-	install -dm755 "$pkgdir/usr/bin"
-	install -dm755 "$pkgdir/usr/share"
-	install -dm755 "$pkgdir/usr/share/applications"
-	install -dm755 "$pkgdir/usr/share/dbus-1"
-	install -dm755 "$pkgdir/usr/share/icons"
-	install -dm755 "$pkgdir/usr/share/pixmaps"
-	install -dm755 "$pkgdir/usr/share/metainfo"
+    # Desktop entry
+    install -Dm644 "$srcdir/usr/share/applications/com.ayugram.desktop.desktop" \
+        "$pkgdir/usr/share/applications/com.ayugram.desktop.desktop"
 
-	# Application executable
-	install -Dm755 "$srcdir/usr/bin/AyuGram" "$pkgdir/usr/bin/AyuGram"
+    # DBus service
+    install -Dm644 "$srcdir/usr/share/dbus-1/services/com.ayugram.desktop.service" \
+        "$pkgdir/usr/share/dbus-1/services/com.ayugram.desktop.service"
 
-	# Remove RPATH informations
-	chrpath --delete "$pkgdir/usr/bin/AyuGram"
+    # Metainfo
+    install -Dm644 "$srcdir/usr/share/metainfo/com.ayugram.desktop.metainfo.xml" \
+        "$pkgdir/usr/share/metainfo/com.ayugram.desktop.metainfo.xml"
 
-	# Desktop launcher
-	install -Dm644 "$srcdir/usr/share/icons/hicolor/256x256/apps/com.ayugram.desktop.png" "$pkgdir/usr/share/pixmaps/ayugram.png"
-	install -Dm644 "$srcdir/usr/share/applications/com.ayugram.desktop.desktop" "$pkgdir/usr/share/applications/com.ayugram.desktop.desktop"
+    # Standard icons
+    local icon_size
+    for icon_size in 16 32 48 64 128 256 512; do
+        install -Dm644 "$srcdir/usr/share/icons/hicolor/${icon_size}x${icon_size}/apps/com.ayugram.desktop.png" \
+            "$pkgdir/usr/share/icons/hicolor/${icon_size}x${icon_size}/apps/com.ayugram.desktop.png"
+    done
 
-	# DBus service
-	install -Dm644 "$srcdir/usr/share/dbus-1/services/com.ayugram.desktop.service" "$pkgdir/usr/share/dbus-1/services/com.ayugram.desktop.service"
+    # HiDPI (@2x) icons
+    for icon_size in 16 32 48 64 128 256 512; do
+        install -Dm644 "$srcdir/usr/share/icons/hicolor/${icon_size}x${icon_size}@2/apps/com.ayugram.desktop.png" \
+            "$pkgdir/usr/share/icons/hicolor/${icon_size}x${icon_size}@2/apps/com.ayugram.desktop.png"
+    done
 
-	# Metainfo
-	install -Dm644 "$srcdir/usr/share/metainfo/com.ayugram.desktop.metainfo.xml" "$pkgdir/usr/share/metainfo/com.ayugram.desktop.metainfo.xml"
-
-	# Icons
-	local icon_size icon_dir
-	for icon_size in 16 32 48 64 128 256 512; do
-		icon_dir="$pkgdir/usr/share/icons/hicolor/${icon_size}x${icon_size}/apps"
-		install -d "$icon_dir"
-		install -m644 "$srcdir/usr/share/icons/hicolor/${icon_size}x${icon_size}/apps/com.ayugram.desktop.png" "$icon_dir/com.ayugram.desktop.png"
-	done
+    # Symbolic icons
+    local sym_icon
+    for sym_icon in com.ayugram.desktop-attention-symbolic.svg \
+                    com.ayugram.desktop-mute-symbolic.svg \
+                    com.ayugram.desktop-symbolic.svg; do
+        install -Dm644 "$srcdir/usr/share/icons/hicolor/symbolic/apps/${sym_icon}" \
+            "$pkgdir/usr/share/icons/hicolor/symbolic/apps/${sym_icon}"
+    done
 }
