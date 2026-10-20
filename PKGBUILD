@@ -1,27 +1,28 @@
 # Maintainer: Maxim Balashov <me@rsg.su>
 
 pkgname=ayugram-desktop-bin
-pkgver=7.0.9
-pkgrel=5
+pkgver=7.2.9
+pkgrel=2
 pkgdesc="Desktop Telegram client with good customization and Ghost mode"
 arch=(x86_64)
 url="https://github.com/AyuGram/AyuGramDesktop"
 license=('GPL-3.0-or-later')
 depends=(
     'abseil-cpp' 'ada' 'ffmpeg' 'glib2' 'glibc' 'hicolor-icon-theme'
-    'hunspell' 'kcoreaddons' 'libavif' 'libdispatch' 'libgcc' 'libheif'
-    'libjpeg-turbo' 'libjxl' 'libstdc++' 'libvpx' 'libx11' 'libxcb'
-    'libxcomposite' 'libxdamage' 'libxext' 'libxfixes' 'libxkbcommon'
-    'libxrandr' 'libxtst' 'lz4' 'minizip' 'openal' 'openh264' 'openssl'
-    'opus' 'libpipewire' 'protobuf' 'qt6-base' 'qt6-declarative'
-    'qt6-svg' 'qt6-wayland' 'rnnoise'
-    'xcb-util-keysyms' 'xxhash' 'zlib' 'libfido2' 'qt6-imageformats'
+    'hunspell' 'kcoreaddons' 'libavif' 'libfido2' 'libgcc' 'libheif'
+    'libjpeg-turbo' 'libjxl' 'libpipewire' 'libsrtp' 'libstdc++'
+    'libvpx' 'libxcb' 'libxcomposite' 'libxdamage' 'libxext'
+    'libxfixes' 'libxkbcommon' 'libxrandr' 'libxtst' 'lz4'
+    'minizip' 'openal' 'openh264' 'openssl' 'opus' 'pipewire'
+    'qt6-base' 'qt6-declarative' 'qt6-imageformats' 'qt6-svg'
+    'qt6-wayland' 'rnnoise' 'tlottie' 'xxhash' 'zlib'
 )
+
 optdepends=(
     'geoclue: geoinformation support'
-    'geocode-glib-2: geocoding support'
-    'webkit2gtk-4.1: embedded browser features provided by webkit2gtk-4.1'
-    'webkitgtk-6.0: embedded browser features provided by webkitgtk-6.0 (Wayland only)'
+    'crow-translate: translation provider'
+    'webkit2gtk-4.1: embedded browser features provided by webkit2gtk-4.1 (GTK3)'
+    'webkitgtk-6.0: embedded browser features provided by webkitgtk-6.0 (GTK4)'
     'xdg-desktop-portal: desktop integration'
 )
 provides=('ayugram-desktop')
@@ -29,7 +30,7 @@ conflicts=('ayugram-desktop')
 options=('!debug')
 
 source=("https://cdn77.cachyos.org/repo/${CARCH}/cachyos/ayugram-desktop-${pkgver}-${pkgrel}-${CARCH}.pkg.tar.zst")
-sha256sums=('b927bd5510e236b18ae67fb59a0b19bf927d203e37239ae0e65ff893a89ef73b')
+sha256sums=('4933e7105f5802543a700eeea17438d715923b6543118bdd163b46c1d50954dc')
 
 package() {
     # Binary
